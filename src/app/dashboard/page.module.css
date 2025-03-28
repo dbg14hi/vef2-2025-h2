@@ -1,0 +1,15 @@
+.section {
+    margin-top: 2rem;
+  }
+  
+  .loading {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+  }
+  

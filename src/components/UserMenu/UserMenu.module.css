@@ -1,0 +1,42 @@
+
+  .menuButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .icon {
+    font-size: 1.25rem;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    width: 130px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown a,
+  .dropdown button {
+    display: block;
+    padding: 0.4rem 3rem 0.4rem 0rem; 
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+  }
+  
+  .dropdown a:hover,
+  .dropdown button:hover {
+    color: var(--primary-color);
+  }
