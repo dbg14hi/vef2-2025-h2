@@ -1,6 +1,6 @@
 import { Exercise, ProgressLog, Workout } from './types';
 
-const BASE_URL = 'http://localhost:8000'; // or use env
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:8000';
 
 export class AdminApi {
   private get token() {

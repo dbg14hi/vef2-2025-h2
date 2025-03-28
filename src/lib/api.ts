@@ -1,6 +1,6 @@
-const BASE_URL = 'http://localhost:8000';
-
 import { Exercise } from './types';
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:8000';
 
 export class WorkoutApi {
   async fetchFromApi<T>(url: string, options?: RequestInit): Promise<T | null> {

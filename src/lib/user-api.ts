@@ -1,5 +1,6 @@
 import { Workout, WorkoutInput } from '../lib/types';
-const BASE_URL = 'http://localhost:8000'; // or use env variable
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:8000';
 
 const fetchFromApi = async <T>(url: string, options?: RequestInit): Promise<T | null> => {
   try {
