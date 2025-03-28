@@ -1,17 +1,32 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import UserMenu from '../UserMenu/UserMenu';
+import styles from './Header.module.css';
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/exercises', label: 'Exercises' },
+    { href: '/newWorkouts', label: 'New Workouts' },
+  ];
 
   return (
-    <header className="header">
-      <nav className="nav">
-        <Link href="/">Home</Link>
-        <Link href="/exercises">Exercises</Link>
-        <Link href="/newWorkouts">New Workouts</Link>
-        <div className="user-wrapper">
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        {links.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`${styles.link} ${pathname === href ? styles.active : ''}`}
+          >
+            {label}
+          </Link>
+        ))}
+        <div className={styles.userWrapper}>
           <UserMenu />
         </div>
       </nav>
