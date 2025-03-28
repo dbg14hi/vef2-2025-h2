@@ -17,15 +17,17 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        {links.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={`${styles.link} ${pathname === href ? styles.active : ''}`}
-          >
-            {label}
-          </Link>
-        ))}
+        <div className={styles.links}>
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`${styles.link} ${pathname === href ? styles.active : ''}`}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
         <div className={styles.userWrapper}>
           <UserMenu />
         </div>

@@ -46,32 +46,6 @@ body {
 }
 
 /* 
-   Navigation 
-*/
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Distribute space */
-  padding: 1rem;
-  background-color: #eee;
-}
-
-.user-wrapper {
-  margin-left: auto; /* Push to right */
-  position: relative;
-}
-
-.nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #333;
-}
-
-.nav button {
-  margin-left: 1rem;
-}
-
-/* 
    Typography 
 */
 h1 {
