@@ -14,7 +14,13 @@ export default function Home() {
         alt="Fitness banner"
         width={400}
         height={600}
-        style={{ borderRadius: '8px', marginTop: '1rem' }}
+        style={{
+          borderRadius: '8px',
+          marginTop: '1rem',
+          display: 'block',
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
       />
     </div>
   );
