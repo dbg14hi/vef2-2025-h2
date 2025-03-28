@@ -32,7 +32,7 @@ Einnig var stórt mállíkan (LLM, „gervigreind“, t.d. ChatGTP) notað til a
 
 ### Hýsing
 Vercel:
-//TODO
+https://vef2-2025-h2.vercel.app/
 
 API:
 https://vef2-2025-h1.onrender.com/
