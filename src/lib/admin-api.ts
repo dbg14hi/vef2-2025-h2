@@ -107,9 +107,9 @@ export class AdminApi {
   }
 
   // GET Workouts
-  async getWorkouts(): Promise<Workout[] | null> {
-    return this.fetchFromApi('/admin/workouts');
-  }
+  async getWorkouts(page = 1) {
+    return this.fetchFromApi<{ data: Workout[]; totalPages: number }>(`/admin/workouts?page=${page}`);
+  }  
   
   // DELETE Workouts
   async deleteWorkout(id: string): Promise<boolean> {

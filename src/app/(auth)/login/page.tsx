@@ -63,7 +63,7 @@ export default function LoginPage() {
         </button>
         
         <p>
-          Don&apos;t have an account? 
+          Don&apos;t have an account?{' '}
           <Link href="/register">Register</Link>
         </p>
       </form>

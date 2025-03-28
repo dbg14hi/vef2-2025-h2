@@ -9,16 +9,22 @@ export default function AdminWorkoutsPage() {
   useProtectedRoute(true);
   const [workouts, setWorkouts] = useState<Workout[]>([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const data = await adminApi.getWorkouts();
-      setWorkouts(data ?? []);
+      const res = await adminApi.getWorkouts(page);
+      if (res) {
+        setWorkouts(res.data);
+        setTotalPages(res.totalPages);
+      }
       setLoading(false);
     };
-
+  
     fetchWorkouts();
-  }, []);
+  }, [page]);
+  
 
   const handleDelete = async (id: string) => {
     const confirmDelete = confirm('Are you sure you want to delete this workout?');
@@ -59,6 +65,15 @@ export default function AdminWorkoutsPage() {
           ))}
         </tbody>
       </table>
+      <div style={{ marginTop: '1rem' }}>
+        <button disabled={page <= 1} onClick={() => setPage((p) => p - 1)}>
+          Previous
+        </button>
+        <span style={{ margin: '0 1rem' }}>Page {page} of {totalPages}</span>
+        <button disabled={page >= totalPages} onClick={() => setPage((p) => p + 1)}>
+          Next
+        </button>
+      </div>
     </div>
   );
 }

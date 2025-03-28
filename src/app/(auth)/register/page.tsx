@@ -24,7 +24,7 @@ export default function RegisterPage() {
   const onSubmit = async (data: RegisterSchema) => {
     try {
       setError(null);
-      await registerUser(data.email, data.password, data.name);
+      await registerUser(data.email, data.password);
       router.push('/login'); // Redirect after successful registration
     } catch (err) {
         console.error(err);
@@ -37,17 +37,6 @@ export default function RegisterPage() {
       <h1>Register</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         {error && <div style={{ color: 'red' }}>{error}</div>}
-        
-        <div>
-          <label htmlFor="name">Name</label>
-          <input 
-            type="text" 
-            {...register('name')}
-            placeholder="Enter your name"
-          />
-          {errors.name && <p style={{ color: 'red' }}>{errors.name.message}</p>}
-        </div>
-        
         <div>
           <label htmlFor="email">Email</label>
           <input 
@@ -83,7 +72,7 @@ export default function RegisterPage() {
         </button>
         
         <p>
-          Already have an account?  
+          Already have an account?  {' '}
           <Link href="/login">Login</Link>
         </p>
       </form>
